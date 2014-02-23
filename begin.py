@@ -18,27 +18,43 @@ file.write(err)
 
 # open the file and read it
 file = open('errors.txt', 'r')
-inputList = file.read().split()
+inputList = file.readlines()
 #Add a bunch of 'junk patterns' here in which we will need to remove
 pattern1  = re.compile ("\"\w+\.\w+\"") #This pattern should match file names
 pattern2 = re.compile ("\w+\.\w+")
+pattern3 = re.compile ("\w+Error: \w+")
 
 print "After Parsing"
+#for i in range(len(inputList)):
+#	if re.match(pattern1,inputList[i]):
+#		inputList[i] = ""
+#	elif re.match(pattern2,inputList[i]):b
+#		inputList[i] = ""
 for i in range(len(inputList)):
-	if re.match(pattern1,inputList[i]):
-		inputList[i] = ""
-	elif re.match(pattern2,inputList[i]):
-		inputList[i] = ""
+	print inputList[i]
+	print"im going to check the matcher"
+	if re.match(pattern3,inputList[i]):
+		print "A string matched!"
+	else:
+		inputList[i]=""
+os.remove("errors.txt")
+file = open('errors.txt', 'w')
+for j in inputList:
+	file.write(j)
+
+
 
 # main function
 if __name__ == '__main__':
 
 	# creat a list with each line as an element of the list
-	argList = open("errors.txt").readlines()
+	file = open("errors.txt","r")
+	argList = file.readlines()
+	print "arglist woooo"
+	print argList
 
 	# print the list
-	for j in inputList:
-		print j
+	
 
 	# iterate through the list
 	# read each element and find all the apostrophes
@@ -49,6 +65,6 @@ if __name__ == '__main__':
 	search.search(argList)
 
 # delete the error txt file
-os.remove("errors.txt")
+#os.remove("errors.txt")
 
 
