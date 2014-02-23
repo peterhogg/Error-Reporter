@@ -1,7 +1,7 @@
 import subprocess
 import sys
 import re
-
+import os
 # import the search.py script
 import search
 
@@ -32,18 +32,23 @@ for i in range(len(inputList)):
 
 # main function
 if __name__ == '__main__':
-	
+
 	# creat a list with each line as an element of the list
 	argList = open("errors.txt").readlines()
-	
+
 	# print the list
 	for j in inputList:
 		print j
 
 	# iterate through the list
-	# read each element and find all the apostrophes 
+	# read each element and find all the apostrophes
 	# replace all (') to a (\') to escape the character
 	for i in argList:
 		i.replace("'","\\'")
 	# Pass each element in the list to the function search
 	search.search(argList)
+
+# delete the error txt file
+os.remove("errors.txt")
+
+
