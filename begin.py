@@ -29,7 +29,7 @@ pattern = re.compile ("\w+Error: \w+")
 # set everything else to null 
 for i in range(len(inputList)):	
 	if re.match(pattern,inputList[i]):
-		print "matched"
+		print "Displaying possible solutions to errors"
 	else:
 		inputList[i]=""
 os.remove("errors.txt")
