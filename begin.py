@@ -15,10 +15,12 @@ out, err = p.communicate()
 # write to the text file
 file = open('errors.txt', 'w')
 file.write(err)
+file.close()
 
 # open the file and read it
 file = open('errors.txt', 'r')
 inputList = file.readlines()
+file.close()
 #Add a bunch of 'junk patterns' here in which we will need to remove
 pattern1  = re.compile ("\"\w+\.\w+\"") #This pattern should match file names
 pattern2 = re.compile ("\w+\.\w+")
@@ -41,6 +43,7 @@ os.remove("errors.txt")
 file = open('errors.txt', 'w')
 for j in inputList:
 	file.write(j)
+file.close()
 
 
 
@@ -50,6 +53,7 @@ if __name__ == '__main__':
 	# creat a list with each line as an element of the list
 	file = open("errors.txt","r")
 	argList = file.readlines()
+	file.close()
 	print "arglist woooo"
 	print argList
 
