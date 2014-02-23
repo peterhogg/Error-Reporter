@@ -5,4 +5,4 @@ This is a python script that searches and displays possible solutions to compile
 
 How to use: 
     
-  $ python begin.py python <file-name>
+$ python begin.py python file-name.py
