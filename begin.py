@@ -54,7 +54,7 @@ if __name__ == '__main__':
 	print argList
 
 	# print the list
-	
+
 
 	# iterate through the list
 	# read each element and find all the apostrophes
@@ -65,6 +65,6 @@ if __name__ == '__main__':
 	search.search(argList)
 
 # delete the error txt file
-#os.remove("errors.txt")
+os.remove("errors.txt")
 
 
