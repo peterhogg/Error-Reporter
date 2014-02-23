@@ -2,6 +2,9 @@ import subprocess
 import sys
 import re
 
+# import the search.py script
+import search
+
 command = ''
 
 for cmd in sys.argv[1:]:
@@ -27,5 +30,20 @@ for i in range(len(inputList)):
 	elif re.match(pattern2,inputList[i]):
 		inputList[i] = ""
 
-for j in inputList:
-	print j
+# main function
+if __name__ == '__main__':
+	
+	# creat a list with each line as an element of the list
+	argList = open("errors.txt").readlines()
+	
+	# print the list
+	for j in inputList:
+		print j
+
+	# iterate through the list
+	# read each element and find all the apostrophes 
+	# replace all (') to a (\') to escape the character
+	for i in argList:
+		i.replace("'","\\'")
+	# Pass each element in the list to the function search
+	search.search(argList)
