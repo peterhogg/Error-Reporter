@@ -33,16 +33,3 @@ def search(search):
 		for er in results:		
 			link = er['url']
 			webbrowser.open(link)
-
-# this list will contain the compiler errors 
-# argList = ["AttributeError: \'tuple\' object has no attribute \'rstrip\'",  "SyntaxError: invalid syntax" ]
-
-# iterate through the list
-# read each element and find all the apostrophes 
-# replace all (') to a (\') to escape the character
-#for i in argList:
-#	i.replace("'","\\'")
-
-
-# Pass each element in the list to the function search
-#search(argList)
