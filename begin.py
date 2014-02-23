@@ -22,20 +22,15 @@ file = open('errors.txt', 'r')
 inputList = file.readlines()
 file.close()
 #Add a bunch of 'junk patterns' here in which we will need to remove
-pattern1  = re.compile ("\"\w+\.\w+\"") #This pattern should match file names
-pattern2 = re.compile ("\w+\.\w+")
-pattern3 = re.compile ("\w+Error: \w+")
 
-print "After Parsing"
-#for i in range(len(inputList)):
-#	if re.match(pattern1,inputList[i]):
-#		inputList[i] = ""
-#	elif re.match(pattern2,inputList[i]):b
-#		inputList[i] = ""
+pattern = re.compile ("\w+Error: \w+")
+
+
+
 for i in range(len(inputList)):
 	
-	if re.match(pattern3,inputList[i]):
-
+	if re.match(pattern,inputList[i]):
+		print "matched"
 	else:
 		inputList[i]=""
 os.remove("errors.txt")
