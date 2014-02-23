@@ -33,10 +33,9 @@ print "After Parsing"
 #	elif re.match(pattern2,inputList[i]):b
 #		inputList[i] = ""
 for i in range(len(inputList)):
-	print inputList[i]
-	print"im going to check the matcher"
+	
 	if re.match(pattern3,inputList[i]):
-		print "A string matched!"
+
 	else:
 		inputList[i]=""
 os.remove("errors.txt")
@@ -54,8 +53,7 @@ if __name__ == '__main__':
 	file = open("errors.txt","r")
 	argList = file.readlines()
 	file.close()
-	print "arglist woooo"
-	print argList
+
 
 	# print the list
 
