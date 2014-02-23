@@ -21,24 +21,24 @@ file.close()
 file = open('errors.txt', 'r')
 inputList = file.readlines()
 file.close()
-#Add a bunch of 'junk patterns' here in which we will need to remove
+# Add a bunch of 'junk patterns' here in which we will need to remove
 
 pattern = re.compile ("\w+Error: \w+")
 
-
-
-for i in range(len(inputList)):
-	
+# match the regular expression to the runtime error
+# set everything else to null 
+for i in range(len(inputList)):	
 	if re.match(pattern,inputList[i]):
 		print "matched"
 	else:
 		inputList[i]=""
 os.remove("errors.txt")
 file = open('errors.txt', 'w')
+
+# write to inputList
 for j in inputList:
 	file.write(j)
 file.close()
-
 
 
 # main function
@@ -48,10 +48,6 @@ if __name__ == '__main__':
 	file = open("errors.txt","r")
 	argList = file.readlines()
 	file.close()
-
-
-	# print the list
-
 
 	# iterate through the list
 	# read each element and find all the apostrophes
