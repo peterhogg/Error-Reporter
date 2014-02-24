@@ -10,3 +10,8 @@ First make the script executable unless it already is
 Run the python executable with the python program you would like to test for errors
 
     $ ./errorsolve.py python filename.py
+
+Current work:
+- creating a java version
+- fixing the regular expression in the python version
+- possibly use a different approach for searches(API?)
